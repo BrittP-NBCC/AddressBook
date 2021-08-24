@@ -1,9 +1,62 @@
-﻿html {
-  position: relative;
-  min-height: 100%;
+﻿@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+:root {
+    --main-bg-color: #2a2b2f;
+    --nav-bg-color: #212225;
+    --inside-bg-color: #37393f;
+    --nav-text-color: #f6f6f6;
+
+    --font-main: 'Staatliches', cursive;
 }
 
-body {
-    background-color: #0b0b0b;
-}
+    html {
+      position: relative;
+      min-height: 100%;
+    }
 
+    body {
+        background-color: var(--main-bg-color);
+    }
+
+    .main-font {
+        font-family: var(--font-main);
+    }
+
+    /*Nav*/
+    .nav-bg {
+        background-color: var(--nav-bg-color);
+        width: 250px !important;
+    }
+
+    .nav-link {
+        width: 170px;
+        padding: 15px !important;
+        color: var(--nav-text-color) !important;
+        transition: margin-left 1s;
+    }
+
+    .nav-link:hover {
+        background-color: #121212;
+        margin-left: 20px;
+    }
+
+    .nav-border {
+        border-bottom: 1px solid #fff;
+    }
+
+    @media only screen and (max-width: 500px) {
+        .nav-bg {
+            width: 100px !important;
+        }
+
+        .nav-link {
+            width: 0px;
+            margin: 0;
+            padding-left: 0px !important;
+            transition: margin-left none;
+        }
+            .nav-link:hover {
+                background-color: var(--nav-bg-color);
+                margin-left: 00px;
+            }
+    }
