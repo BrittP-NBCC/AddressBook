@@ -28,7 +28,7 @@ namespace AddressBook
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseNpgsql(DataUtility.GetConnectionString(Configuration)));
 
             //adds image service registered
             services.AddScoped<IImageService, BasicImageService>();
