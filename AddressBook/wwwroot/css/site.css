@@ -138,6 +138,10 @@
         background-color: var(--nav-bg-color) !important;
     }
 
+    .table-active {
+        background-color: var(--nav-bg-color) !important;
+    }
+
      .pointer {
         cursor: pointer;
     }

@@ -31,7 +31,7 @@
             <tbody id="myTable">
                 @foreach (var item in Model)
                 {
-                <tr class="pointer" onclick="location.href = '@(Url.Action("Details", "Contacts", new {item.Id}))'">
+                <tr class="pointer">
                     <td>
                         <img class="no-hover img-fluid rounded-circle z-depth-2" width="55" src="@_imageService.ConvertByteArrayToFile(item.ImageData, item.ImageType)" />
                     </td>
@@ -46,7 +46,7 @@
     <div class="col-9 contact-details-section">
         <!--PARTIAL DETAILS GO HERE-->
         @if(Model.Count() != 0)
-            { Html.RenderPartial("_Details", @Model.First());}
+            {Html.RenderPartial("_Details", @Model.First());}
 
     </div>
 </div>
