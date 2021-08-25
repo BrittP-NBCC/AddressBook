@@ -1,107 +1,72 @@
-﻿@model IEnumerable<AddressBook.Models.Contact>
+﻿@model IEnumerable<AddressBook.Models.Contact> 
 @inject AddressBook.Services.Interfaces.IImageService _imageService
 
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
-
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Contacts";
 }
 
-<h1>Index</h1>
+<div class="row row-cols-1 row-cols-md-2 border-bottom border-light p-3">
+    <div class="col-6">
+        <h4 class="text-white">Contacts</h4>
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+        <div class="btn btn-success">
+            <a asp-action="Create" class="text-decoration-none text-white">Add Contact</a>
+        </div>
+    </div>
+</div> 
+<div class="row row-cols-1 row-cols-md-2">
+    <div class="col-4 contact-section">
+        <!--Search-->
+        <div class="input-group rounded">
+            <input id="myInput" onkeyup="myFunction()" type="search" class="search form-control rounded" placeholder="Search Contacts" aria-label="Search"
+                   aria-describedby="search-addon"/>
+            <span id="search-addon">
+                <i class="fas fa-search"></i>
+            </span>
+        </div>
+        
+        <!--Table-->
+        <table class="table border-top border-light">
+            <tbody id="myTable">
+                @foreach (var item in Model)
+                {
+                <tr class="pointer" onclick="location.href = '@(Url.Action("Details", "Contacts", new {item.Id}))'">
+                    <td>
+                        <img class="no-hover img-fluid rounded-circle z-depth-2" width="55" src="@_imageService.ConvertByteArrayToFile(item.ImageData, item.ImageType)" />
+                    </td>
+                    <td>
+                        <strong>@Html.DisplayFor(modelItem => item.FullName)</strong><br>
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-8 contact-details-section">
+      
+    </div>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-
-<table class="table" id="ContactTable">
-    <thead>
-        <tr>
-            <th>
-                Image
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.State)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Zip)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
 
 
 
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    <img class="img-fluid" src="@_imageService.ConvertByteArrayToFile(item.ImageData, item.ImageType)" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FirstName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Address1)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Address2)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.City)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.State)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Zip)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Phone)
-                </td>
-
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
 
 @section scripts {
     <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-    <script>
+    <!--search-->
+     <script>
         $(document).ready(function () {
-            $('#ContactTable').DataTable();
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
         });
     </script>
 }
