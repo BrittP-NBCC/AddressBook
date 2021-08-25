@@ -436,3 +436,11 @@ C:\src\code\Projects\AddressBook\AddressBook\obj\Debug\net5.0\Razor\Views\Contac
 C:\src\code\Projects\AddressBook\AddressBook\obj\Debug\net5.0\Razor\Views\Contacts\Details.cshtml.g.cs
 C:\src\code\Projects\AddressBook\AddressBook\obj\Debug\net5.0\Razor\Views\Contacts\Edit.cshtml.g.cs
 C:\src\code\Projects\AddressBook\AddressBook\obj\Debug\net5.0\Razor\Views\Contacts\Index.cshtml.g.cs
+C:\src\code\Projects\AddressBook\AddressBook\obj\Debug\net5.0\Razor\Views\Shared\_Details.cshtml.g.cs
+C:\src\code\Projects\AddressBook\AddressBook\bin\Debug\net5.0\System.Web.Mvc.dll
+C:\src\code\Projects\AddressBook\AddressBook\bin\Debug\net5.0\System.Web.Razor.dll
+C:\src\code\Projects\AddressBook\AddressBook\bin\Debug\net5.0\System.Web.Helpers.dll
+C:\src\code\Projects\AddressBook\AddressBook\bin\Debug\net5.0\System.Web.WebPages.Deployment.dll
+C:\src\code\Projects\AddressBook\AddressBook\bin\Debug\net5.0\System.Web.WebPages.Razor.dll
+C:\src\code\Projects\AddressBook\AddressBook\bin\Debug\net5.0\System.Web.WebPages.dll
+C:\src\code\Projects\AddressBook\AddressBook\bin\Debug\net5.0\Microsoft.Web.Infrastructure.dll
