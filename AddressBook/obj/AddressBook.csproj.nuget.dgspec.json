@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\src\\code\\Projects\\AddressBook\\AddressBook\\AddressBook.csproj": {}
+    "C:\\src\\Code\\Projects\\AddressBook\\AddressBook\\AddressBook.csproj": {}
   },
   "projects": {
-    "C:\\src\\code\\Projects\\AddressBook\\AddressBook\\AddressBook.csproj": {
+    "C:\\src\\Code\\Projects\\AddressBook\\AddressBook\\AddressBook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\src\\code\\Projects\\AddressBook\\AddressBook\\AddressBook.csproj",
+        "projectUniqueName": "C:\\src\\Code\\Projects\\AddressBook\\AddressBook\\AddressBook.csproj",
         "projectName": "AddressBook",
-        "projectPath": "C:\\src\\code\\Projects\\AddressBook\\AddressBook\\AddressBook.csproj",
-        "packagesPath": "C:\\Users\\britt\\.nuget\\packages\\",
-        "outputPath": "C:\\src\\code\\Projects\\AddressBook\\AddressBook\\obj\\",
+        "projectPath": "C:\\src\\Code\\Projects\\AddressBook\\AddressBook\\AddressBook.csproj",
+        "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
+        "outputPath": "C:\\src\\Code\\Projects\\AddressBook\\AddressBook\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\britt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -89,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

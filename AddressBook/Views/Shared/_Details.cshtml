@@ -4,7 +4,7 @@
 <div class="container pt-5 ps-5">
     <div clss="row">
         <div class="col-12">
-            <img class="no-hover img-fluid rounded-circle z-depth-2" width="150" src="@_imageService.ConvertByteArrayToFile(Model.ImageData, Model.ImageType)" />
+            <img class="no-hover img-fluid rounded-circle z-depth-2 mb-5" style="object-fit: cover; width: 145px; height: 145px;" src="@_imageService.ConvertByteArrayToFile(Model.ImageData, Model.ImageType)" />
             <h1>@Html.DisplayFor(model => model.FullName)</h1>
         </div>
     </div>
@@ -70,13 +70,13 @@
             @Html.DisplayNameFor(model => model.Created)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Created)
+            @Model.Created.ToString("MMM dd, yyyy")
         </dd>
     </dl>
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a class="btn btn-primary mt-3 me-1 mb-5" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+        <input type="submit" value="Delete" class="btn btn-danger mt-3 mb-5" />
     </form>
 </div>
 
